@@ -1,0 +1,80 @@
+/* make title bar the same color as the rest */
+#workbench\.parts\.titlebar {
+  background-color: rgb(33, 37, 43) !important;
+}
+
+/* remove the title from title bar */
+#workbench\.parts\.titlebar .window-title {
+  visibility: hidden !important;
+}
+
+/* make activity bar the same color as the rest */
+#workbench\.parts\.activitybar {
+  background-color: rgb(33, 37, 43) !important;
+}
+
+/* no border between the open editors on top */
+div.tab.close-button-right.sizing-fit.has-icon-theme {
+  border-right: 0 !important;
+}
+
+/* Hide the text in the top left corner */
+div.title-label h2 {
+  visibility: hidden !important;
+}
+
+/* hide the app icon in the top left */
+/* div.window-appicon {
+  display: none !important;
+} */
+
+/* div.menubar-menu-button:not(:first-child) {
+  display: none !important;
+} */
+
+/* Hide File, Edit, ... options */
+/* div.menubar-menu-button {
+  visibility: hidden !important;
+} */
+
+/* Hide status bar, doesn't work */
+/* #workbench\.parts\.statusbar {
+  display: none !important;
+} */
+
+
+div.tabs-breadcrumbs {
+  display: none !important;
+}
+
+/* Hide shadows when scrolling */
+.monaco-editor .scroll-decoration {
+  box-shadow: none !important;
+}
+
+/* Hide shadows when scrolling */
+.monaco-editor .minimap-shadow-visible {
+  box-shadow: none !important;
+}
+
+/* Change color of the minimap slider box */
+.minimap-slider-horizontal {
+  background-color: rgba(100, 50, 125, 0.25) !important;
+}
+
+/* Change color of the status bar */
+.monaco-workbench .part.statusbar {
+  background-color: rgb(100, 50, 125) !important;
+}
+
+/* Hide shadow in the activity bar */
+.monaco-workbench .monaco-scrollable-element > .shadow.top {
+  box-shadow: none !important;
+}
+
+/* change color of comments */
+.mtk3 {
+  color: #6d77b3;
+}
+
+/* ================================ */
