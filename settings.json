@@ -1,0 +1,88 @@
+{
+    "window.zoomLevel": -1,
+    "editor.fontSize": 19,
+    "[javascript]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontFamily": "Consolas, 'Monaco', monospace",
+    "editor.insertSpaces": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "python.pythonPath": "C:\\Program Files\\python\\python.exe",
+    "python.jediEnabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.scrollback": 10000,
+    "files.associations": {
+        "*.pl": "prolog"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "extensions.ignoreRecommendations": false,
+    "vscode_custom_css.imports": [
+        "file:///C:/Users/tomas/Desktop/dotfiles/dark.css"
+    ],
+    "workbench.colorTheme": "Atom One Dark",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "bracketPairColorizer.forceIterationColorCycle": false,
+    "bracketPairColorizer.forceUniqueOpeningColor": false,
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "bracketPairColorizer.colorMode": "Independent",
+    // "bracketPairColorizer.colors": [
+    //     "Gold",
+    //     "Orchid"
+    // ],
+    "bracketPairColorizer.independentPairColors": [
+        // [
+        //     "()",
+        //     [
+        //         "LightGray"
+        //     ],
+        //     "Red" // use when right bracket is missing
+        // ],
+        // [
+        //     "[]",
+        //     [
+        //         "Gold"
+        //     ],
+        //     "Red"
+        // ],
+        // [
+        //     "{}",
+        //     [
+        //         "DarkSalmon"
+        //     ],
+        //     "Red"
+        // ]
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            // {
+            //     "scope": "variable.other.readwrite.js",
+            //     "settings": {
+            //         "foreground": "#d19a66",
+            //     }
+            // },
+            {
+                "scope": "variable.other.object.js",
+                "settings": {
+                    "foreground": "#E5C07B"
+                }
+            },
+            {
+                "scope": "variable.parameter.js",
+                "settings": {
+                    "foreground": "#56B6C2"
+                }
+            }
+        ]
+    }
+}
+
+// #d19a66
+// Coral, Gold
