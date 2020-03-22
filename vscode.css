@@ -125,9 +125,22 @@ div.active-item-indicator {
   border-left-color: #b37ece !important;
 }
 
-div.active-item-indicator:before {
+div.active-item-indicator::before {
   border-left-color: #b37ece !important;
 }
+
+div.monaco-list.mouse-support.selection-none::before {
+  outline-color: #b37ece !important;
+}
+
+/* div.monaco-list.mouse-support.selection-none::before {
+  border-width: 4px !important;
+  border: 1px solid #b37ece !important;
+} */
+
+/* div.monaco-scrollable-element {
+  border-width: 4px !important;
+} */
 
 /* ================================ */
 
