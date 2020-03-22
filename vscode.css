@@ -117,6 +117,18 @@ div.tabs-breadcrumbs {
 } */
 
 
+div.monaco-list-row.focused.selected {
+  background-color: rgba(100, 50, 125, 0.5) !important;
+}
+
+div.active-item-indicator {
+  border-left-color: #b37ece !important;
+}
+
+div.active-item-indicator:before {
+  border-left-color: #b37ece !important;
+}
+
 /* ================================ */
 
 
@@ -182,5 +194,7 @@ div.tabs-breadcrumbs {
   letter-spacing: -0.4px;
   font-weight: 500;
 } */
+
+
 
 
