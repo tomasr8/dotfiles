@@ -1,0 +1,12 @@
+[user]
+	email = tomas.roun@cern.ch
+	name = Tomas Roun
+[alias]
+	a = add
+	b = "!git -P branch"
+	c = commit
+	s = status
+	ch = checkout
+	cb = checkout -b
+	puff = pull --ff-only
+	lg = log --color=always --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
