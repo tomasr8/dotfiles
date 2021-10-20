@@ -1,0 +1,19 @@
+[alias]
+	a = add
+	b = branch
+	c = commit
+	s = status
+
+    dh = diff HEAD
+
+    # https://github.com/ThiefMaster/myd0t
+    # a compact one-line log view
+	lg = log --color=always --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	# same, but with absolute dates
+	lga = log --color=always --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+	# when pulling from upstream, rebase is the way to go, so let's have an explicit alias for it
+	purr = pull --rebase
+	# when you know there's nothing local to rebase, be explicit about fast-forwarding
+	puff = pull --ff-only
+
+

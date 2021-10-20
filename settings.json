@@ -1,73 +1,14 @@
 {
-    "window.zoomLevel": -1,
-    "editor.fontSize": 19,
-    "[javascript]": {
-        "editor.tabSize": 4,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.fontFamily": "Consolas, 'Monaco', monospace",
-    "editor.insertSpaces": true,
-    "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "newUntitledFile",
-    "python.pythonPath": "C:\\Program Files\\python\\python.exe",
-    "python.jediEnabled": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "terminal.integrated.scrollback": 10000,
-    "files.associations": {
-        "*.pl": "prolog"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "extensions.ignoreRecommendations": false,
-    "vscode_custom_css.imports": [
-        "file:///C:/Users/tomas/Desktop/dotfiles/dark.css"
-    ],
+    "workbench.editor.enablePreview": false,
+    "editor.fontSize": 19,
+    "editor.fontFamily": "Consolas, 'Monaco', monospace",
     "workbench.colorTheme": "Atom One Dark",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "bracketPairColorizer.forceIterationColorCycle": false,
-    "bracketPairColorizer.forceUniqueOpeningColor": false,
-    "bracketPairColorizer.showHorizontalScopeLine": false,
-    "bracketPairColorizer.colorMode": "Independent",
-    // "bracketPairColorizer.colors": [
-    //     "Gold",
-    //     "Orchid"
-    // ],
-    "bracketPairColorizer.independentPairColors": [
-        // [
-        //     "()",
-        //     [
-        //         "LightGray"
-        //     ],
-        //     "Red" // use when right bracket is missing
-        // ],
-        // [
-        //     "[]",
-        //     [
-        //         "Gold"
-        //     ],
-        //     "Red"
-        // ],
-        // [
-        //     "{}",
-        //     [
-        //         "DarkSalmon"
-        //     ],
-        //     "Red"
-        // ]
-    ],
+    "terminal.integrated.scrollback": 10000,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
     "editor.tokenColorCustomizations": {
         "textMateRules": [
-            // {
-            //     "scope": "variable.other.readwrite.js",
-            //     "settings": {
-            //         "foreground": "#d19a66",
-            //     }
-            // },
             {
                 "scope": "variable.other.object.js",
                 "settings": {
@@ -81,8 +22,24 @@
                 }
             }
         ]
+    },
+    "vscode_custom_css.imports": [
+        "file:///home/tomas/Desktop/dotfiles/dark.css"
+    ],
+    "window.titleBarStyle": "custom",
+
+  
+    "files.exclude": {
+        "**/.cache": true,
+        "**/.pytest_cache": true,
+        "**/*.egg-info": true,
+        "**/__pycache__": true,
+        "**/static/dist": true,
+        "**/docs/build": true
+    },
+
+    "search.exclude": {
+        "indico/indico/translations/": true,
+        "indico/indico/web/static/fonts/": true
     }
 }
-
-// #d19a66
-// Coral, Gold
