@@ -1,137 +1,107 @@
 /* make title bar the same color as the rest */
-
 #workbench.parts.titlebar {
-    background-color: rgb(33, 37, 43) !important;
-  }
-  
-  /* remove the title from title bar */
-  
-  #workbench.parts.titlebar .window-title {
-    visibility: hidden !important;
-  }
-  
-  /* make activity bar the same color as the rest */
-  
-  #workbench.parts.activitybar {
-    background-color: rgb(33, 37, 43) !important;
-  }
-  
-  /* no border between the open editors on top */
-  div.tab.close-button-right.sizing-fit.has-icon-theme {
-    border-right: 0 !important;
-  }
-  
-  /* Hide the text in the top left corner */
-  div.title-label h2 {
-    visibility: hidden !important;
-  }
-  
-  /* hide the app icon in the top left /
-  / div.window-appicon {
-    display: none !important;
-  } */
-  
-  /* div.menubar-menu-button:not(:first-child) {
-    display: none !important;
-  } */
-  
-  /* Hide File, Edit, ... options /
-  / div.menubar-menu-button {
-    visibility: hidden !important;
-  } */
-  
-  /* Hide status bar, doesn't work /
-  / #workbench.parts.statusbar {
-    display: none !important;
-  } */
-  
-  div.tabs-breadcrumbs {
-    display: none !important;
-  }
-  
-  /* Hide shadows when scrolling */
-  .monaco-editor .scroll-decoration {
-    box-shadow: none !important;
-  }
-  
-  /* Hide shadows when scrolling */
-  .monaco-editor .minimap-shadow-visible {
-    box-shadow: none !important;
-  }
-  
-  /* Change color of the minimap slider box */
-  .minimap-slider-horizontal {
-    background-color: rgba(100, 50, 125, 0.25) !important;
-  }
-  
-  /* Change color of the status bar */
-  .monaco-workbench .part.statusbar {
-    background-color: rgb(100, 50, 125) !important;
-  }
-  
-  /* Hide shadow in the activity bar */
-  .monaco-workbench .monaco-scrollable-element > .shadow.top {
-    box-shadow: none !important;
-  }
-  
-  /* change color of comments */
-  .mtk3 {
-    color: #6d77b3;
-  }
-  
-  /* .mtk1 {
-    color: #c1c149;
-  } */
-  
-  /* Active tab neon */
-  .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit.active {
-    /* box-shadow: inset 0 -5px 25px rgb(100, 50, 125); */
-    background-color: rgba(100, 50, 125, 0.5) !important;
-    /* box-shadow: inset 0 -5px 25px #fc28a825; */
-    position: relative;
-  }
-  
-  /* Active tab stripe */
-  .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right, #fc28a8, #02a6f7) !important;
-    opacity: 1;
-    z-index: 6;
-  }
+  background-color: rgb(33, 37, 43) !important;
+}
 
-  div.monaco-list-row.focused.selected {
-    background-color: rgba(100, 50, 125, 0.5) !important;
-  }
-  
-  div.active-item-indicator {
-    border-left-color: #b37ece !important;
-  }
-  
-  div.active-item-indicator::before {
-    border-left-color: #b37ece !important;
-  }
-  
-  div.monaco-list.mouse-support.selection-none::before {
-    outline-color: #b37ece !important;
-  }
-  
-  /* div.monaco-list.mouse-support.selection-none::before {
-    border-width: 4px !important;
-    border: 1px solid #b37ece !important;
-  } */
-  
-  /* div.monaco-scrollable-element {
-    border-width: 4px !important;
-  } */
-  
-  /* div.invisible.scrollbar.vertical.fade .slider {
-    background: linear-gradient(to bottom, #fc28a8, #02a6f7) !important;
-    opacity: 0.5;
-  } */
-  
-  /* ================================ */
+/* remove the title from title bar */
+#workbench.parts.titlebar .window-title {
+  visibility: hidden !important;
+}
+
+/* make activity bar the same color as the rest */
+#workbench.parts.activitybar {
+  background-color: rgb(33, 37, 43) !important;
+}
+
+/* no border between the open editors on top */
+div.tab.close-button-right.sizing-fit.has-icon-theme {
+  border-right: 0 !important;
+}
+
+/* Hide the text in the top left corner */
+div.title-label h2 {
+  visibility: hidden !important;
+}
+
+div.tabs-breadcrumbs {
+  display: none !important;
+}
+
+/* Hide shadows when scrolling */
+.monaco-editor .scroll-decoration {
+  box-shadow: none !important;
+}
+
+/* Hide shadows when scrolling */
+.monaco-editor .minimap-shadow-visible {
+  box-shadow: none !important;
+}
+
+/* Change color of the minimap slider box */
+.minimap-slider-horizontal {
+  background-color: rgba(100, 50, 125, 0.25) !important;
+}
+
+/* Change color of the status bar */
+.monaco-workbench .part.statusbar {
+  background-color: rgb(100, 50, 125) !important;
+}
+
+/* Hide shadow in the activity bar */
+.monaco-workbench .monaco-scrollable-element > .shadow.top {
+  box-shadow: none !important;
+}
+
+/* change color of comments */
+.mtk3 {
+  color: #6d77b3;
+}
+
+/* Active tab neon */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.sizing-fit.active {
+  /* box-shadow: inset 0 -5px 25px rgb(100, 50, 125); */
+  background-color: rgba(100, 50, 125, 0.5) !important;
+  /* box-shadow: inset 0 -5px 25px #fc28a825; */
+  position: relative;
+}
+
+/* Active tab stripe */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.sizing-fit.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #fc28a8, #02a6f7) !important;
+  opacity: 1;
+  z-index: 6;
+}
+
+div.monaco-list-row.focused.selected {
+  background-color: rgba(100, 50, 125, 0.5) !important;
+}
+
+div.active-item-indicator {
+  border-left-color: #b37ece !important;
+}
+
+div.active-item-indicator::before {
+  border-left-color: #b37ece !important;
+}
+
+div.monaco-list.mouse-support.selection-none::before {
+  outline-color: #b37ece !important;
+}

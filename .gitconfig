@@ -3,6 +3,7 @@
 	b = "!git -P branch"
 	c = commit
 	s = status
+	r = rebase
 	ch = checkout
 	cb = checkout -b
 	puff = pull --ff-only
