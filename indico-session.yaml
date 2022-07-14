@@ -1,47 +1,20 @@
-session_name: main
+session_name: indico
 windows:
 - window_name: indico
-  shell_command_before:
-    - cd ~/dev                    # run as a first command in all panes
+  shell_command_before: # Run in all panes
+    - cd ~/dev
     - source env/bin/activate
-<<<<<<< HEAD
-  layout: '27db,254x57,0,0{127x57,0,0[127x12,0,0,29,127x14,0,13,30,127x29,0,28,31],126x57,128,0,32}'
-  panes:
-    - shell_command:           # pane no. 1
-        - cd /var/log          # run multiple commands in this pane
-        - ls -al | grep \.log
-    - echo second pane         # pane no. 2
-    - echo third pane          # pane no. 3
-    - echo forth pane          # pane no. 4
-=======
     - cd ~/dev/indico
     - clear
-  layout: '7ee8,282x71,0,0{141x71,0,0[141x30,0,0,0,141x40,0,31,2],140x71,142,0[140x22,142,0,1,140x22,142,23,5,140x9,142,46,3,140x15,142,56,4]}'
-  #layout: 'ec4d,282x71,0,0{141x71,0,0[141x17,0,0,1,141x19,0,18,2,141x33,0,38,3],140x71,142,0[140x35,142,0,4,140x35,142,36,5]}'
-  #layout: '27db,254x57,0,0{127x57,0,0[127x12,0,0,29,127x14,0,13,30,127x29,0,28,31],126x57,128,0,32}'
+  # Use `tmux display-message -p "#{window_layout}"` to get the layout from tmux
+  layout: 'fb6f,282x74,0,0{141x74,0,0[141x43,0,0,6,141x30,0,44,7],140x74,142,0[140x43,142,0,9,140x30,142,44,11]}'
   panes:
-    - shell_command:           # pane no. 1
+    - shell_command:
         - indico shell
-    - shell_command:
-        - python3 bin/utils/db_log.py
-    - shell_command:
-        - clear
-    - shell_command:
-        - clear
     - shell_command:
         - ./bin/maintenance/build-assets.py indico --dev --watch
     - shell_command:
+        - clear
+      focus: true
+    - shell_command:
         - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy
-        
-  #panes:
-  #  - shell_command:           # pane no. 1
-  #      - ./bin/maintenance/build-assets.py indico --dev --watch
-  #  - shell_command:
-  #      - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy
-  #  - shell_command:
-  #      - indico shell
-  #  - shell_command:
-  #      - git b
-  #  - shell_command:
-  #      - git b
->>>>>>> d5dab5847dc590cf92ce7af0e56c14b1064d9b3c

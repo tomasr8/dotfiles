@@ -1,7 +1,7 @@
 {
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
-    "editor.fontSize": 19,
+    "editor.fontSize": 16,
     "editor.fontFamily": "Consolas, 'Monaco', monospace",
     "workbench.colorTheme": "Atom One Dark",
     "terminal.integrated.scrollback": 10000,
@@ -24,11 +24,10 @@
         ]
     },
     "vscode_custom_css.imports": [
-        "file:///home/tomas/Desktop/dotfiles/dark.css"
+        "file:///home/tomas/Desktop/dotfiles/purple.css"
     ],
     "window.titleBarStyle": "custom",
 
-  
     "files.exclude": {
         "**/.cache": true,
         "**/.pytest_cache": true,

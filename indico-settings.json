@@ -1,0 +1,23 @@
+// Indico/newdle specific settings
+// Merge with settings.json
+{
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.pytest_cache": true,
+    "**/*.egg-info": true,
+    "**/__pycache__": true,
+    "**/static/dist": true,
+    "**/docs/build": true
+  },
+
+  "search.exclude": {
+    "indico/indico/translations/": true,
+    "indico/indico/web/static/fonts/": true,
+    "indico/htmlcov/": true,
+
+    "newdle/htmlcov/": true,
+    "newdle/node_modules/": true,
+    "newdle/.venv/": true,
+    "newdle/newdle/client/src/locales/": true
+  }
+}
