@@ -17,4 +17,4 @@ windows:
         - clear
       focus: true
     - shell_command:
-        - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy
+        - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy --reloader watchman
