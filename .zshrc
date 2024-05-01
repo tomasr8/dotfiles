@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/troun/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
@@ -40,6 +40,8 @@ function cd() {
       # Activate if .venv exists
       if [[ -d ./.venv ]] ; then
         source ./.venv/bin/activate
+      elif [[ -d ./venv ]] ; then
+        source ./venv/bin/activate
       fi
   else
       # Check if the current folders is inside
@@ -70,3 +72,5 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[command]='fg=#de7717,bold'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=#ac80fa,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#ac80fa,bold'
+
+alias gits='git status'
