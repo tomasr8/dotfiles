@@ -3,7 +3,7 @@ windows:
 - window_name: indico
   shell_command_before: # Run in all panes
     - cd ~/dev
-    - source env/bin/activate
+    - source py312/bin/activate
     - cd ~/dev/indico
     - clear
   # Use `tmux display-message -p "#{window_layout}"` to get the layout from tmux
@@ -17,4 +17,4 @@ windows:
         - clear
       focus: true
     - shell_command:
-        - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy --reloader watchman
+        - indico run -h 127.0.0.1 -p 8000 -q --enable-evalex --url https://sg1.cern.ch --proxy --reloader watchfiles
