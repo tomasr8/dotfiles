@@ -1,0 +1,116 @@
+#!/usr/bin/env python
+"""List pods holding NVIDIA GPU or MIG allocations.
+
+Install as a kubectl plugin:
+    chmod +x kubectl-gpus && mv kubectl-gpus ~/.local/bin/
+    kubectl gpus --totals
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from collections import Counter
+
+RESOURCE_PREFIX = "nvidia.com/"
+NAMESPACE = "swan"
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        prog="kubectl gpus",
+        description="List pods holding NVIDIA GPU or MIG allocations.",
+    )
+    parser.add_argument(
+        "--totals", action="store_true", help="print a per-resource summary at the end"
+    )
+    return parser.parse_args(argv)
+
+
+def fetch_pods() -> list[dict]:
+    cmd = ("kubectl", "get", "pods", "-n", NAMESPACE, "-o", "json")
+    proc = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    return json.loads(proc.stdout).get("items", [])
+
+
+def gpu_allocations(pod: dict) -> Counter:
+    """Sum nvidia.com/* resources across a pod's containers."""
+    totals: Counter = Counter()
+    for container in pod.get("spec", {}).get("containers", []):
+        resources = container.get("resources") or {}
+        limits = resources.get("limits") or {}
+        requests = resources.get("requests") or {}
+        for name in set(limits) | set(requests):
+            if not name.startswith(RESOURCE_PREFIX):
+                continue
+            try:
+                count = max(int(limits.get(name, 0)), int(requests.get(name, 0)))
+            except ValueError:
+                continue
+            if count:
+                totals[name] += count
+    return totals
+
+
+def collect() -> list[dict]:
+    rows = []
+    for pod in fetch_pods():
+        node = pod.get("spec", {}).get("nodeName") or ""
+
+        allocations = gpu_allocations(pod)
+        if not allocations:
+            continue
+
+        meta = pod.get("metadata", {})
+        for resource, count in sorted(allocations.items()):
+            rows.append(
+                {
+                    "pod": meta.get("name", ""),
+                    "node": node or "<unscheduled>",
+                    "status": pod.get("status", {}).get("phase", ""),
+                    "resource": resource,
+                    "count": count,
+                }
+            )
+
+    rows.sort(key=lambda r: (r["node"], r["resource"], r["pod"]))
+    return rows
+
+
+def render(rows: list[dict]) -> None:
+    if not rows:
+        print("No pods with GPU allocations found.", file=sys.stderr)
+        return
+
+    cols = ("pod", "node", "status", "resource", "count")
+    header = [c.upper() for c in cols]
+    table = [header] + [[str(row[c]) for c in cols] for row in rows]
+    widths = [max(len(r[i]) for r in table) for i in range(len(cols))]
+    for line in table:
+        print("  ".join(cell.ljust(w) for cell, w in zip(line, widths)).rstrip())
+
+
+def print_totals(rows: list[dict]) -> None:
+    totals: Counter = Counter()
+    for row in rows:
+        totals[row["resource"]] += row["count"]
+    if not totals:
+        return
+    print(file=sys.stderr)
+    width = max(len(r) for r in totals)
+    for resource, count in sorted(totals.items()):
+        print(f"{resource.ljust(width)}  {count}", file=sys.stderr)
+    print(f"{'total'.ljust(width)}  {sum(totals.values())}", file=sys.stderr)
+
+
+def main() -> None:
+    args = parse_args()
+    rows = collect()
+    render(rows)
+    if args.totals:
+        print_totals(rows)
+
+
+if __name__ == "__main__":
+    main()
