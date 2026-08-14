@@ -34,6 +34,12 @@ def fetch_pods() -> list[dict]:
     return json.loads(proc.stdout).get("items", [])
 
 
+def fetch_nodes() -> list[str]:
+    cmd = ("kubectl", "get", "nodes", "-o", "json")
+    proc = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    data = json.loads(proc.stdout).get("items", [])
+    return [item["metadata"]["name"] for item in data]
+
 
 def node_name_sort_key(name: str) -> tuple[str, int]:
     n, index = name.rsplit("-", maxsplit=1)
@@ -41,7 +47,7 @@ def node_name_sort_key(name: str) -> tuple[str, int]:
 
 
 def collect() -> list[dict]:
-    counts = defaultdict(int)
+    counts = {name: 0 for name in fetch_nodes()}
     for pod in fetch_pods():
         node = pod.get("spec", {}).get("nodeName") or ""
 
